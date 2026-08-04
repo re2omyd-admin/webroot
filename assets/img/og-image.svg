@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+<rect width="1200" height="630" fill="#f4f0e9"/>
+<path d="M780 65C1030 34 1198 188 1162 384C1124 590 848 641 696 478C545 315 591 88 780 65Z" fill="#dfe8e1"/>
+<circle cx="910" cy="307" r="174" fill="#e26052"/>
+<circle cx="910" cy="307" r="225" fill="none" stroke="#17201d" stroke-opacity=".18" stroke-width="2"/>
+<ellipse cx="910" cy="307" rx="290" ry="170" fill="none" stroke="#17201d" stroke-opacity=".16" stroke-width="2" transform="rotate(-24 910 307)"/>
+<text x="910" y="284" text-anchor="middle" font-family="Georgia,serif" font-size="90" fill="#fffdf9">ECM</text>
+<text x="910" y="337" text-anchor="middle" font-family="Arial,sans-serif" font-size="21" font-weight="700" letter-spacing="5" fill="#fffdf9">Re2O · hADM</text>
+<g transform="translate(72 64)">
+<ellipse cx="52" cy="35" rx="50" ry="33" fill="none" stroke="#17201d" stroke-width="2"/>
+<text x="22" y="44" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#17201d">MY</text>
+<text x="61" y="44" font-family="Georgia,serif" font-size="30" fill="#e26052">:</text>
+<text x="74" y="44" font-family="Arial,sans-serif" font-size="27" font-weight="700" fill="#17201d">D</text>
+</g>
+<text x="75" y="210" font-family="Noto Sans CJK KR,Arial,sans-serif" font-size="26" font-weight="700" letter-spacing="3" fill="#c84e43">SINSA · DERMATOLOGY · Re2O</text>
+<text x="75" y="290" font-family="Noto Sans CJK KR,Arial,sans-serif" font-size="62" font-weight="800" fill="#17201d">신사 마이디피부과</text>
+<text x="75" y="367" font-family="Noto Sans CJK KR,Arial,sans-serif" font-size="62" font-weight="800" fill="#17201d">Re2O 리투오 안내</text>
+<text x="75" y="432" font-family="Noto Sans CJK KR,Arial,sans-serif" font-size="27" fill="#53605b">안봉균 피부과 전문의 · 신사역 4번 출구 인근</text>
+<line x1="75" x2="570" y1="500" y2="500" stroke="#cbc5bc" stroke-width="2"/>
+<text x="75" y="548" font-family="Arial,sans-serif" font-size="24" font-weight="700" fill="#17201d">re2omyd.com</text>
+</svg>
