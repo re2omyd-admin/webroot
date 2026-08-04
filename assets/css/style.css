@@ -15,3 +15,6 @@
 /* Product-use evidence section (2026-08-04 verified update) */
 .product-use-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;margin-top:34px}.product-use-card{min-height:330px;background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);padding:34px;display:flex;flex-direction:column}.product-use-tag{font-size:9px;letter-spacing:.16em;font-weight:800;color:var(--coral-dark)}.product-use-card h3{font-size:30px;line-height:1.25;letter-spacing:-.04em;margin:54px 0 15px}.product-use-card p{color:var(--muted);margin:0 0 26px}.product-use-card .text-link{margin-top:auto}.section-heading-spaced{margin-top:100px}.source-box-evidence{background:#e6e0ed}.timeline-link-row{display:flex;gap:26px;flex-wrap:wrap;margin-top:18px}
 @media (max-width:800px){.product-use-grid{grid-template-columns:1fr}.product-use-card{min-height:290px}.section-heading-spaced{margin-top:75px}.timeline-link-row{flex-direction:column;align-items:flex-start;gap:12px}}
+
+.nowrap{white-space:nowrap;}
+@media (max-width:420px){.hero-home h1 .nowrap{font-size:.92em;letter-spacing:-.045em;}}
