@@ -40,3 +40,16 @@ GitHub Pages용 정적 웹사이트입니다. 다른 시술 목록은 넣지 않
 ## 검색 등록
 
 배포 후 Google Search Console과 네이버 서치어드바이저에 `https://re2omyd.com/sitemap.xml`을 제출하세요. 사이트 구조만으로 특정 검색·AI 추천 노출을 보장할 수는 없지만, 전용 URL, 일관된 병원명·주소·전화번호, 구조화 데이터와 1차 출처 링크를 통해 병원–원장–Re2O 150mg–Re2O Fine 50mg의 관계를 명확하게 표현했습니다.
+## 상담게시판 데이터 정책
+- Supabase 사용
+- 텍스트 상담만 지원
+- 사진/이미지/파일 업로드 기능 없음
+- Supabase Storage 미사용
+
+
+
+## 상담 알림 이메일
+
+새 상담글 알림 수신 주소는 `wilbedoc@naver.com`으로 설정합니다.
+Supabase Edge Function의 Secret `NOTIFY_EMAIL` 값에 해당 주소를 입력하세요.
+이메일 주소를 변경할 경우 코드 파일을 수정하지 않고 Supabase Secret 값만 변경하면 됩니다.
