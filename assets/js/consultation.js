@@ -4,6 +4,12 @@ const configured=!SUPABASE_URL.includes("PASTE_")&&!SUPABASE_ANON_KEY.includes("
 const supabase=configured?createClient(SUPABASE_URL,SUPABASE_ANON_KEY):null;
 const $=s=>document.querySelector(s);
 const form=$("#consult-form"), status=$("#consult-status"), aiField=$("#ai-field");
+const urlTopic=new URLSearchParams(window.location.search).get("topic");
+const topicAliases={"Re2O":"Re2O / 리투오","리투오":"Re2O / 리투오","리투오 파인":"Re2O Fine / 리투오 파인","Re2O Fine":"Re2O Fine / 리투오 파인"};
+const wantedTopic=topicAliases[urlTopic]||urlTopic;
+if(wantedTopic && form?.elements.search_topic && Array.from(form.elements.search_topic.options).some(option=>option.value===wantedTopic)){
+  form.elements.search_topic.value=wantedTopic;
+}
 form?.elements.source.addEventListener("change",e=>{const on=e.target.value==="AI 검색/추천"; aiField.hidden=!on; form.elements.ai_tool.required=on; if(!on) form.elements.ai_tool.value="";});
 form?.addEventListener("submit",async e=>{e.preventDefault(); if(!configured){status.textContent="상담 시스템 연결 설정이 아직 완료되지 않았습니다.";return;} const fd=new FormData(form); const question=String(fd.get("question")||""); if(/(?:01[016789][- ]?\d{3,4}[- ]?\d{4}|\d{6}[- ]?\d{7})/.test(question)){status.textContent="전화번호나 주민등록번호처럼 보이는 개인정보는 질문에서 삭제해 주세요.";return;} status.textContent="등록 중입니다…"; const {data,error}=await supabase.rpc("create_consultation",{p_nickname:fd.get("nickname"),p_source:fd.get("source"),p_ai_tool:fd.get("ai_tool")||null,p_search_topic:fd.get("search_topic"),p_question:question,p_pin:fd.get("pin")}); if(error){status.textContent="등록 중 오류가 발생했습니다. 잠시 후 다시 시도해 주세요.";console.error(error);return;} status.innerHTML=`등록되었습니다. 상담번호는 <strong>${data}</strong> 입니다. 비공개 답변 확인에 필요하니 보관해 주세요.`; form.reset(); aiField.hidden=true; await loadPublic();});
 async function loadPublic(){const box=$("#public-board"); if(!configured){box.innerHTML='<p class="board-empty">상담 시스템 연결 후 공개 답변이 표시됩니다.</p>';return;} const {data,error}=await supabase.rpc("get_public_consultations"); if(error||!data?.length){box.innerHTML='<p class="board-empty">아직 공개된 상담 답변이 없습니다.</p>';return;} box.innerHTML=data.map(x=>`<article class="qa-card"><div><span>${escapeHtml(x.nickname)}</span><time>${new Date(x.created_at).toLocaleDateString("ko-KR")}</time></div><h3>Q. ${escapeHtml(x.question)}</h3><p><strong>A.</strong> ${escapeHtml(x.answer)}</p></article>`).join("");}
